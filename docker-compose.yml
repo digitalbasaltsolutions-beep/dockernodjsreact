@@ -1,11 +1,12 @@
-version : "3"
-services:
-backend: 
-  build : ./bakckend
-  ports:
-  - "5000:5000"
+version: "3.8"
 
-frontend:
-  build: ./frontend
-  ports:
-   - "3000:3000"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"

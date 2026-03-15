@@ -1,10 +1,22 @@
 import express from "express";
 
 const app = express();
- app.get("/", (req, res) => {
-    res.send("hello from my app nodejs and react u 're welcom (;");
+const PORT = 3000;
+
+// Middleware
+app.use(express.json());
+
+// Test route
+app.get("/", (req, res) => {
+  res.send("Server is running 🚀");
 });
-    app.listen(5000,()=>{
-        console.log("server he is runing on the port 5000");
-   
- });
+
+// Example API route
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from the backend!" });
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
