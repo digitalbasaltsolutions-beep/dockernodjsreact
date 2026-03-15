@@ -1,7 +1,6 @@
-import Express = require("express");
+import express from "express";
 
-
-const app   =Express();
+const app = express();
  app.get("/", (req, res) => {
     res.send("hello from my app nodejs and react u 're welcom (;");
 });
