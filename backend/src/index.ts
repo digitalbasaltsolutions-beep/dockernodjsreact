@@ -1,14 +1,14 @@
 import express from "express";
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 // Middleware
 app.use(express.json());
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("Server is running 🚀");
+  res.send("Server running 🚀");
 });
 
 // Example API route
