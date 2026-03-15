@@ -1,12 +1,24 @@
-version: "3.8"
+version: "3.9"
 
 services:
   backend:
     build: ./backend
     ports:
       - "5000:5000"
+    volumes:
+      - ./backend:/app           # ربط الكود المحلي بالـ container
+      - /app/node_modules        # منع استبدال node_modules داخل الـ container
+    command: npm run dev         # nodemon لمراقبة التغييرات
+    environment:
+      - NODE_ENV=development
 
   frontend:
     build: ./frontend
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/app          # ربط الكود المحلي بالـ container
+      - /app/node_modules
+    command: npm start           # react-scripts start لمراقبة التغييرات
+    environment:
+      - CHOKIDAR_USEPOLLING=true # لضمان hot reload على Docker Desktop / Mac

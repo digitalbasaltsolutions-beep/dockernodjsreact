@@ -1,13 +1,14 @@
-FROM node:18 
+FROM node:18
 
 WORKDIR /app
 
+# نسخ ملفات الـ package.json أولًا لتسريع npm install
 COPY package*.json ./
 
-RUN npm install 
- 
+RUN npm install
+
+# نسخ باقي الكود
 COPY . .
 
-EXPOSE 5000 
-
-CMD ["npx" ,"test-node-dev" , "src/index.test"]
+# nodemon مع ts-node
+CMD ["npm", "run", "dev"]
