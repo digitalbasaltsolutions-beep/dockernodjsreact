@@ -1,0 +1,63 @@
+/* Navbar.css - تصميم عصري للـ Navbar */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* القائمة يسار، الشعار يمين */
+    padding: 1rem 2rem;
+    background-color: #2575fc; /* لون أزرق عصري */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s;
+  }
+  
+  .navbar .nav-links li a:hover {
+    color: #ff9800; /* لون عند hover */
+    transform: translateY(-2px);
+  }
+  
+  .navbar .logo img {
+    width: 100px; /* حجم الشعار */
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .navbar .logo img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .navbar .nav-links {
+      flex-direction: column;
+      width: 100%;
+    }
+    .navbar .nav-links li {
+      margin-bottom: 0.5rem;
+    }
+    .navbar .logo {
+      align-self: flex-end; /* الشعار يبقى على اليمين */
+    }
+  }
